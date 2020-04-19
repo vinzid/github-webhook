@@ -1,15 +1,15 @@
-## Web Hook Configuration 网钩配置
+## Web Hook Configuration 网络钩子配置
 Follow the steps to automatically pull update when the project is pushed to master branch  
 根据以下步骤操作，当项目的 master 分支被推时，将自动拉取更新
 
 
-### Add Webhook 增加网钩
+### Add Webhook 增加网络钩子
 
 Config in the Github webside  
 在 GitHub 网站中设置
 
 >Project - Setting -- Webhooks -- Add webhook  
-项目 -- 设置 -- 网钩 -- 增加网钩
+项目 -- 设置 -- 网络钩子 -- 增加网络钩子
 
 ### Add Variable (optional) 增加变量（可选）
 
@@ -35,6 +35,15 @@ PROJECT_PARENT is the directroy where project's directory is located; you can di
 PROJECT_PARENT 为项目目录所在的目录；可以直接 `ndoe app` 替代 pm2 进行测试
 
 
+### Fulfill Auto-run 实现自启动
+
+>pm2 startup
+pm2 save
+
+`pm2 startup` will create service which will run on startup, `pm2 save` will save the current running pm2 app, as restore content when reboot  
+`pm2 startup` 会创建并开启开机自动运行的服务， `pm2 save` 会保存当前的 pm2 运行应用，作为重启后的恢复内容
+
+
 
 ## Local Hook Configuration (optional) 本地钩子配置（可选）
 If the project need to be built after pull update, the local hook can be set, following is hexo blog as example  
@@ -44,6 +53,7 @@ If the project need to be built after pull update, the local hook can be set, fo
 nano post-merge
 ```
 #!/bin/sh
+yarn clean
 yarn build
 ```
 >chmod +x post-merge
