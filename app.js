@@ -27,8 +27,8 @@ const server = createServer((req, res) => {
       if('object' === typeof body){
         if('refs/heads/master' === body.ref){
           console.log(`${body.repository.name} master`);
-          const { exec } = require('child_process')
-          const command = `cd ../${body.repository.name} && git pull origin master`
+          const { exec } = require('child_process');
+          const command = `cd ../${body.repository.name} && git pull origin master`;
           exec(command, (error, stdout, stderr) => {
             if(error){
               console.log('updated unsuccessfully');
