@@ -37,10 +37,10 @@ PROJECT_PARENT 为项目目录所在的目录；可以直接 `ndoe app` 替代 p
 
 ### Fulfill Auto-run 实现自启动
 
->pm2 startup
+>pm2 startup  
 pm2 save
 
-`pm2 startup` will create service which will run on startup, `pm2 save` will save the current running pm2 app, as restore content when reboot  
+`pm2 startup` will create service which will run on startup, `pm2 save` will save the current running pm2 apps, as content to restore when reboot  
 `pm2 startup` 会创建并开启开机自动运行的服务， `pm2 save` 会保存当前的 pm2 运行应用，作为重启后的恢复内容
 
 
