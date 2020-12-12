@@ -43,7 +43,7 @@ const server = createServer((req, res) => {
             }
           });
         }else{
-          console.log(`${body.repository.name} $(body.ref} was pushed`);
+          console.log(`${body.repository.name} ${body.ref} was pushed`);
           res.statusCode = 200;
           res.end('Nothing');
         }
